@@ -1,0 +1,52 @@
+/* Contact Section Styling */
+.contact-section {
+    background-color: #f9f9f9;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.contact-section h2 {
+    color: #333;
+}
+
+.contact-section form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section .form-label {
+    font-weight: bold;
+}
+
+.contact-section .form-control {
+    border-radius: 0.25rem;
+}
+
+.contact-section .btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.contact-section .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.contact-section .form-message {
+    font-size: 1rem;
+    color: #007bff;
+}
+
+.contact-section .contact-info {
+    margin-top: 1.5rem;
+}
+
+.contact-section .contact-info p {
+    margin-bottom: 1rem;
+}
+
+.contact-section .contact-info i {
+    margin-right: 0.5rem;
+}

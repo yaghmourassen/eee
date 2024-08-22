@@ -4,8 +4,15 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
+    
 
 }
+
+
+
+
+
+
 
 /* Default Navbar styling */
 .navbar {
@@ -65,22 +72,6 @@ body.dark-mode .navbar .navbar-brand:hover {
     text-shadow: 0 0 5px rgba(255, 165, 0, 1), 0 0 10px rgba(255, 165, 0, 0.8); /* Light orange glow */
 }
 
-
-/* Default Footer styling */
-footer.bg-dark {
-    background-color: #ff0000 !important; /* Light mode color */
-    color: #000 !important; /* Light mode text color */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 -4px 8px -2px orange; /* Light mode shadow */
-}
-
-/* Dark mode adjustments for footer */
-body.dark-mode footer.bg-dark {
-    background-color: #000 !important; /* Dark mode color */
-    color: #ddd !important; /* Dark mode text color */
-    box-shadow: 0 -4px 8px -2px white; /* Dark mode shadow */
-}
-
 /* Navbar links styling */
 .navbar-nav .nav-link {
     color: #000 !important; /* Text color for light mode */
@@ -104,21 +95,28 @@ body.dark-mode .navbar-nav .nav-link {
 body.dark-mode .navbar .navbar-brand {
     color: #ddd !important; /* Dark mode text color */
 }
-
-/* Hero section styling */
+/* Base Hero Section Styling */
 header {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    color: #000; /* Default text color for light mode */
+    display: flex;
+    flex-direction: column; /* Stack content vertically by default */
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  
 }
 
-/* Hero text container styling */
-header .text-center {
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
-    padding: 2rem;
-    border-radius: 0.5rem;
-    color: #000; /* Text color for light mode */
+
+
+
+
+/* Hero Section Text Styling */
+header .flex.flex-col {
+    text-align: center; /* Center text on small screens */
+    max-width: 80%; /* Limit text width on small screens */
+    margin-bottom: 1rem; /* Adjust space between text and image */
 }
 
 /* Ensure hero text color changes in dark mode */
@@ -129,21 +127,7 @@ body.dark-mode header .text-center {
 /* Header text */
 header h1 {
     font-size: 2.5rem; /* Default font size for large screens */
-    color: #000; /* Text color for light mode */
-}
-
-
-/* Default Footer styling */
-footer.bg-dark {
-    background-color: #ffffff !important; /* Light mode color */
-    color: #000 !important; /* Light mode text color */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Dark mode adjustments for footer */
-body.dark-mode footer.bg-dark {
-    background-color: #000 !important; /* Dark mode color */
-    color: #ddd !important; /* Dark mode text color */
+    
 }
 
 /* Dark mode body adjustments */
@@ -174,116 +158,174 @@ body.dark-mode {
     text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8); /* Strong white glow effect */
 }
 
-
-
-
-@media (min-width: 768px) {
-    header h1 {
-        font-size: 3rem; /* Larger font size for medium screens and above */
-    }
-}
-/* Base Hero Section Styling */
-header {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    
-}
-header {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    color: #000; /* Default text color for light mode */
-}
-
-/* Hero Section Text Styling */
-header .flex.flex-col {
-    text-align: left; /* Align text to the left */
-    max-width: 50%; /* Limit text width */
-}
-
-header h1,
-header p {
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    margin: 0; /* Remove default margins */
-}
-
-/* Light Mode Text Colors */
-body.light-mode header h1,
-body.light-mode header p {
-    color: #000 !important; /* Ensure black text color for light mode */
-}
-
-/* Dark Mode Text Colors */
-body.dark-mode header h1,
-body.dark-mode header p {
-    color: #fff !important; /* Ensure white text color for dark mode */
-}
-
-/* Hero Section Image Adjustments */
+/* Hero Section Image Styling */
 header img {
-    display: block;
-    width: 100%;
+    display: block; /* Ensure the image is displayed */
+    width: 80%; /* Adjust width for small screens */
     max-width: 400px; /* Maximum width of the image */
     height: auto;
-    border-radius: 0.5rem; /* Rounded corners for the image */
+    border-radius: 0.5rem;
+    margin-top: 1rem; /* Adjust space above image */
+    box-shadow: 2px -2px 8px rgba(0, 0, 0, 0.5), 4px -4px 15px rgba(0, 0, 0, 0.4); /* Default shadow */
 }
 
-/* Hide Image on Small Screens */
+/* Light Mode Image Shadow */
+body.light-mode header img {
+    box-shadow: 2px -2px 8px rgba(255, 165, 0, 0.5), 4px -4px 15px rgba(255, 165, 0, 0.4); /* Orange shadow for light mode */
+}
 
+/* Dark Mode Image Shadow */
+body.dark-mode header img {
+    box-shadow: 2px -2px 8px rgba(255, 255, 255, 0.5), 4px -4px 15px rgba(255, 255, 255, 0.4); /* White shadow for dark mode */
+}
 
-/* Base styling for hero section logos */
+/* Icon Styling */
 header .flex a {
-    font-size: 1.5rem; /* Adjust logo size as needed */
-    color: inherit; /* Inherit color from parent */
+    font-size: 1.2rem; /* Smaller icon size */
+    color: inherit;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Light Mode Logo Colors */
+/* Light Mode Icons */
 body.light-mode header .flex a {
-    color: orange; /* Logos color in light mode */
+    color: orange; /* Orange icons for light mode */
 }
 
 body.light-mode header .flex a:hover {
-    color: orange; /* Hover color */
-    text-shadow: 0 0 5px rgba(255, 165, 0, 1), 0 0 10px rgba(255, 165, 0, 0.8); /* Light orange glow */
+    text-shadow: 0 0 5px rgba(255, 165, 0, 1), 0 0 10px rgba(255, 165, 0, 0.8); /* Glow effect */
 }
 
-/* Dark Mode Logo Colors */
+/* Dark Mode Icons */
 body.dark-mode header .flex a {
-    color: white; /* Logos color in dark mode */
+    color: white; /* White icons for dark mode */
 }
 
 body.dark-mode header .flex a:hover {
-    color: white; /* Hover color */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 1), 0 0 10px rgba(255, 255, 255, 0.8); /* Light white glow */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1), 0 0 10px rgba(255, 255, 255, 0.8); /* Glow effect */
 }
 
-/* Base styling for the image */
-header img {
-    display: block;
+/* Sun and Moon Icon Styling */
+#sun-icon, #moon-icon {
+    font-size: 20px; /* Smaller icon size */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#sun-icon:hover {
+    text-shadow: 0 0 20px rgba(255, 165, 0, 1), 0 0 30px rgba(255, 165, 0, 0.8); /* Orange glow */
+}
+
+#moon-icon:hover {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8); /* White glow */
+}
+
+/* Adjust for larger screens */
+@media (min-width: 1024px) {
+    header {
+        flex-direction: row; /* Align content horizontally on larger screens */
+        justify-content: space-between;
+    }
+
+    header .flex.flex-col {
+        text-align: left; /* Align text to the left on larger screens */
+        max-width: 50%; /* Adjust text container width for larger screens */
+        margin-bottom: 0; /* Remove space between text and image */
+    }
+
+    header img {
+        margin-top: 0;
+        margin-left: 2rem; /* Add spacing between text and image */
+        max-width: 400px; /* Larger image size for larger screens */
+    }
+}
+
+/* Ensure image is visible and on top on small screens */
+@media (max-width: 1023px) {
+    header {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center;
+    }
+
+    header img {
+        order: -1; /* Ensure image appears above text */
+        width: 50%; /* Adjust width for small screens */
+        max-width: none; /* Remove maximum width constraint */
+        margin-top: 0; /* Remove top margin */
+        margin-bottom: 1rem; /* Add space below image */
+    }
+
+   
+
+
+}
+
+
+
+
+
+
+
+/* Default Footer styling */
+footer.bg-dark {
+    background-color: #ffffff !important; /* Light mode color */
+    color: #000 !important; /* Light mode text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode adjustments for footer */
+body.dark-mode footer.bg-dark {
+    background-color: #000 !important; /* Dark mode color */
+    color: #ddd !important; /* Dark mode text color */
+}
+
+footer.bg-dark {
+ 
+    color: #000 !important; /* Light mode text color */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 -4px 8px -2px orange; /* Light mode shadow */
+}
+
+/* Dark mode adjustments for footer */
+body.dark-mode footer.bg-dark {
+    background-color: #000 !important; /* Dark mode color */
+    color: #ddd !important; /* Dark mode text color */
+    box-shadow: 0 -4px 8px -2px white; /* Dark mode shadow */
+}
+/* Ensure body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Flexbox for the body to push footer to the bottom */
+.d-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content area */
+main {
+    flex: 1;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
     width: 100%;
-    max-width: 400px; /* Maximum width of the image */
-    height: auto;
-    border-radius: 0.5rem; /* Rounded corners for the image */
-    /* Default shadow */
-    box-shadow: 2px -2px 8px rgba(0, 0, 0, 0.5), 4px -4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Light Mode 3D Shadow */
-body.light-mode header img {
-    box-shadow: 2px -2px 8px rgba(255, 165, 0, 0.5), 4px -4px 15px rgba(255, 165, 0, 0.4); /* More visible pale orange shadow for light mode */
+/* Responsive styling */
+@media (max-width: 600px) {
+    footer {
+        font-size: 14px;
+        padding: 15px;
+    }
 }
 
-/* Dark Mode 3D Shadow */
-body.dark-mode header img {
-    box-shadow: 2px -2px 8px rgba(255, 255, 255, 0.5), 4px -4px 15px rgba(255, 255, 255, 0.4); /* More visible pale white shadow for dark mode */
-}
+
+
+
+
+
